@@ -1,0 +1,39 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - rabbitmq
+      - redis
+
+  frontend:
+    build: ./ProjeKitap
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: proje_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
