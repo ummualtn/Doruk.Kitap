@@ -16,13 +16,12 @@
     "react-redux": "^8.1.3",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
-    "yup": "^1.1.1",
-    "dotenv": "^16.3.1"
+    "yup": "^1.1.1"
   },
   "scripts": {
     "dev": "react-scripts start",
     "start": "react-scripts start",
-    "build": "CI=false ESLINT_NO_DEV_ERRORS=true react-scripts build --no-error-on-fail",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -32,7 +31,6 @@
       "react-app/jest"
     ],
     "rules": {
-      "react-hooks/exhaustive-deps": "warn",
       "no-unused-vars": "warn"
     }
   },
@@ -48,8 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint-config-react-app": "^7.0.1"
   }
 }
